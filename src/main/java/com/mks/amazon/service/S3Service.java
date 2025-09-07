@@ -1,7 +1,13 @@
 package com.mks.amazon.service;
 
-import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
-@Service
-public class S3Service {
+import java.io.IOException;
+
+public interface S3Service {
+
+    void upload(MultipartFile multipartFile) throws IOException;
+
+
+    byte[] downloadFile(String fileName);
 }
